@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+        <div class="container">
+            <h3>What inspired game maker Satoshi Tajiri to create the character Pokemon?</h3>
+            <button class="incorrect one">Baloons</button>
+            <button class="correct one">Butterflies</button>
+            <button class="incorrect one">Firefighters</button>
+            <p id="fbone"></p>
+        </div>
+        <hr>
+        <div class="container">
+            <h3>What game franchise did the creator pay to have negative press coverage to promote the game?</h3>
+            <button class="correct two">Rockstar Games - Grand Theft Auto</button>
+            <button class="incorrect two">Activision - Call of Duty</button>
+            <button class="incorrect two">NaughtyDog - Uncharted</button>
+            <p id="fbtwo"></p>
+        </div>
+        <hr>
+        <div class="container">
+            <h3>What was Steve Wozniak (co-founder of Apple's) favorite game?</h3>
+            <button class="incorrect three">The Last of Us</button>
+            <button class="incorrect three">Pong</button>
+            <button class="correct three">Tetris</button>
+            <p id="fbthree"></p>
+        </div>
+        <hr>
+        <div class="container">
+            <h3>What was the name of the fattes mofo in GTA: SA (small caps)?</h3>
+            <input type="text">
+            <button id="submit">Submit answer</button>
+            <p id="fb2"></p>
+
+        </div>
+        <script>
+            window.addEventListener("load", function() {
+
+                let corrects = document.querySelectorAll('.correct');
+                for (let i = 0; i < corrects.length; i++)  {
+                    corrects[i].addEventListener('click', function() {
+                        corrects[i].style.backgroundColor = 'green';
+                        document.querySelector('#fbone').innerHTML = "Correct!";
+                    });
+                }
+
+                let incorrects = document.querySelectorAll('.incorrect');
+                for (let j = 0; j < incorrects.length; j++) {
+                    incorrects[j].addEventListener('click', function() {
+                        incorrects[j].style.backgroundColor = 'red';
+                        document.querySelector('#fbone').innerHTML = "Incorrect!";
+                    });
+                }
+
+                document.querySelector('#submit').addEventListener('click', function() {
+                    let input = document.querySelector('input');
+                    if(input.value == 'big smoke') {
+                        input.style.backgroundColor = 'green';
+                        document.querySelector('#fb2').innerHTML = "Correct!";
+                    }
+                    else {
+                        input.style.backgroundColor = 'red';
+                        document.querySelector('#fb2').innerHTML = "Incorrect!";
+                    }
+                })
+            });
+        </script>
+    </body>
+</html>
