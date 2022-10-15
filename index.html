@@ -48,17 +48,19 @@
 
                 let corrects = document.querySelectorAll('.correct');
                 for (let i = 0; i < corrects.length; i++)  {
+                    let classnamecor = corrects[i].classList[1];
                     corrects[i].addEventListener('click', function() {
                         corrects[i].style.backgroundColor = 'green';
-                        document.querySelector('#fbone').innerHTML = "Correct!";
+                        document.querySelector('#fb' + classnamecor).innerHTML = "Correct!";
                     });
                 }
 
                 let incorrects = document.querySelectorAll('.incorrect');
                 for (let j = 0; j < incorrects.length; j++) {
+                    let classnameincor = incorrects[j].classList[1];
                     incorrects[j].addEventListener('click', function() {
                         incorrects[j].style.backgroundColor = 'red';
-                        document.querySelector('#fbone').innerHTML = "Incorrect!";
+                        document.querySelector('#fb' + classnameincor).innerHTML = "Incorrect!";
                     });
                 }
 
